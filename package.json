@@ -1,0 +1,24 @@
+{
+  "name": "quiz-game-jay-jiang-and-leo-chen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen/issues"
+  },
+  "homepage": "https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen#readme"
+}
