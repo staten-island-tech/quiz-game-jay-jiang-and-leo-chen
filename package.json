@@ -6,9 +6,12 @@
   "dependencies": {
     "parcel": "^2.0.0-beta.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
