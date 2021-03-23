@@ -1,12 +1,23 @@
-const score = 0;
+let score = 1;
+const scoreboard = document.createElement("span");
+document.body.prepend(scoreboard);
+scoreboard.replaceWith(score);
 
-const btn = document.querySelectorAll("button");
-btn.addEventListener("click", function () {
-  if (this.className === correct) {
-    score + 1;
-  } else {
-    score + 0;
-  }
+document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
+  correctAnswer.addEventListener("change", function (e) {
+    const scoreboard = document.createElement("span");
+    document.body.prepend(scoreboard);
+    scoreboard.replaceWith(score);
+    if (this.className === "correct") {
+      score++;
+      e.parentElement.removeChild(e);
+      console.log(score);
+      a;
+    } else {
+      scoreboard.remove(score);
+      score + 0;
+    }
+  });
 });
 
 //Scratched forever
