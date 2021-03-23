@@ -1,79 +1,13 @@
 const score = 0;
 
-const btn = document.querySelectorAll('button')
-btn.addEventListener("click", function() {
-    if (this.className === correct) {
-        score + 1;
-    } else {
-        score + 0;
-    }
+const btn = document.querySelectorAll("button");
+btn.addEventListener("click", function () {
+  if (this.className === correct) {
+    score + 1;
+  } else {
+    score + 0;
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Scratched forever
 /* console.log("connected");
@@ -158,4 +92,3 @@ document.body.append(one.question);
 document.body.append(one.question);
 document.body.append(one.question);
 document.body.append(one.question); */
- 
