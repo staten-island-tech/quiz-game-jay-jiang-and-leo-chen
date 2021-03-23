@@ -1,3 +1,13 @@
 body {
-    background-color: red;
+  background-color: red;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-size: 1vw;
+  border-radius: 50%;
 }
