@@ -4,5 +4,7 @@ console.log("connected");
 const submitButton = document.getElementById("submit");
 
 submitButton.addEventListener("click", function (e) {
-  alert("Element has been clicked");
+    const hide = document.querySelectorAll('span');
+    hide.hidden = true;
+    alert("You received a " + scoreboard.innerHTML + "/7.");
 });
