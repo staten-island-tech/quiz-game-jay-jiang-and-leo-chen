@@ -2,6 +2,7 @@ let score = 0;
 const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
 scoreboard.prepend(score);
+scoreboard.innerHTML = "Score : " + score;
 
 document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
   correctAnswer.addEventListener("change", function (e) {
@@ -9,7 +10,7 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
       score++;
       console.log(score);
       document.body.prepend(scoreboard);
-      scoreboard.innerHTML = score;
+      scoreboard.innerHTML = "Score : " + score;
     } else {
       score + 0;
     }
