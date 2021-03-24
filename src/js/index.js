@@ -1,4 +1,11 @@
-let score = 0;
+const startButton = document.getElementById("start");
+
+const addName = document.forms["add-name"];
+const value = addName.querySelector("input[type='text']").value;
+
+startButton.addEventListener("click", function (e) {});
+
+/* let score = 0;
 
 document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
   correctAnswer.addEventListener("change", function (e) {
@@ -8,7 +15,7 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
     }
     console.log("Wow! You scored " + score);
   });
-});
+}); */
 
 /* let score = 1;
 const scoreboard = document.createElement("span");
