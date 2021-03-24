@@ -1,20 +1,16 @@
-let score = 1;
+let score = 0;
 const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
-scoreboard.replaceWith(score);
+scoreboard.prepend(score);
 
 document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
   correctAnswer.addEventListener("change", function (e) {
-    const scoreboard = document.createElement("span");
-    document.body.prepend(scoreboard);
-    scoreboard.replaceWith(score);
     if (this.className === "correct") {
       score++;
-      e.parentElement.removeChild(e);
       console.log(score);
-      a;
+      document.body.prepend(scoreboard);
+      scoreboard.innerHTML = score;
     } else {
-      scoreboard.remove(score);
       score + 0;
     }
   });
