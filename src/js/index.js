@@ -4,21 +4,9 @@ document.body.prepend(scoreboard);
 scoreboard.prepend(score);
 scoreboard.innerHTML = "Score : " + score;
 
-document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
-  correctAnswer.addEventListener("change", function (e) {
-    if (this.className === "correct") {
-      score++;
-      console.log(score);
-      document.body.prepend(scoreboard);
-      scoreboard.innerHTML = "Score : " + score;
-    } else {
-      score + 0;
-    }
-  });
-});
 
-//Scratched forever
-/* console.log("connected");
+
+console.log("connected");
 const one = {
     question: "What is 1 + 1?",
     contentA: "2",
@@ -69,10 +57,11 @@ const seven = {
     contentD: "None of above",
 };
 
-
+const question = document.createElement('span');
 
 function questionize(number) {
     const question = document.createElement('span');
+    question.id = number;
     document.body.append(question);
     question.append(number);
 }
@@ -84,19 +73,76 @@ questionize(five.question);
 questionize(six.question);
 questionize(seven.question);
 
-function answerize(number, a, b, c ,d) {
-    const answer = document.createElement('button');
-    document.querySelector('span').append(answer);
-    answer.append(a);
-    answer.append(b);
-    answer.append(c);
-    answer.append(d);
-}
-answerize(one.question, one.contentA, one.contentB, one.contentC, one.contentD);
 
-/* document.body.append(one.question, one.contentA, one.contentB, one.contentC, one.contentD);
-document.body.append(one.question);
-document.body.append(one.question);
-document.body.append(one.question);
-document.body.append(one.question);
-document.body.append(one.question); */
+
+
+function answerize(number, a) {
+    const bubble = document.createElement('input');
+    const answer = document.createElement('span');
+    bubble.type = 'radio';
+    bubble.name = number;
+    bubble.id = 'answer';
+    bubble.className = 'correct';
+    answer.innerHTML = a;
+    const e = document.getElementById(number);
+    e.append(bubble);
+    e.append(answer);
+
+}
+function incorrectize(number, a) {
+    const bubble = document.createElement('input');
+    const answer = document.createElement('span');
+    bubble.type = 'radio';
+    bubble.name = number;
+    bubble.id = 'answer';
+    answer.innerHTML = a;
+    const e = document.getElementById(number);
+    e.append(bubble);
+    e.append(answer);
+
+}
+answerize(one.question, one.contentA);
+answerize(two.question, two.contentA);
+answerize(three.question, three.contentA);
+answerize(four.question, four.contentA);
+answerize(five.question, five.contentA);
+answerize(six.question, six.contentA);
+answerize(seven.question, seven.contentA);
+incorrectize(one.question, one.contentB);
+incorrectize(two.question, two.contentB);
+incorrectize(three.question, three.contentB);
+incorrectize(four.question, four.contentB);
+incorrectize(five.question, five.contentB);
+incorrectize(six.question, six.contentB);
+incorrectize(seven.question, seven.contentB);
+incorrectize(one.question, one.contentC);
+incorrectize(two.question, two.contentC);
+incorrectize(three.question, three.contentC);
+incorrectize(four.question, four.contentC);
+incorrectize(five.question, five.contentC);
+incorrectize(six.question, six.contentC);
+incorrectize(seven.question, seven.contentC);
+incorrectize(one.question, one.contentD);
+incorrectize(two.question, two.contentD);
+incorrectize(three.question, three.contentD);
+incorrectize(four.question, four.contentD);
+incorrectize(five.question, five.contentD);
+incorrectize(six.question, six.contentD);
+incorrectize(seven.question, seven.contentD);
+
+
+
+document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
+    correctAnswer.addEventListener("change", function (e) {
+      if (this.className === "correct") {
+        score++;
+        console.log(score);
+        document.body.prepend(scoreboard);
+        scoreboard.innerHTML = "Score : " + score;
+      } else {
+        score + 0;
+      }
+    });
+});
+
+
