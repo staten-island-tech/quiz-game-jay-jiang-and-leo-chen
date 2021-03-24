@@ -3,7 +3,7 @@ const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
 scoreboard.prepend(score);
 scoreboard.innerHTML = "Score : " + score;
-
+scoreboard.hidden = true;
 
 
 console.log("connected");
@@ -146,3 +146,8 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
 });
 
 
+const submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", function (e) {
+    alert("You received a " + scoreboard.innerHTML + "/7.");
+});
