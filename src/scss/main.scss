@@ -2,5 +2,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
+  color: blue;
+  background-color: aquamarine;
+}
+
+.submit-btn {
+  color: red;
 }
