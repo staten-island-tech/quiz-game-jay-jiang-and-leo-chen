@@ -6,7 +6,188 @@ scoreboard.innerHTML = "Score : " + score;
 scoreboard.hidden = true;
 
 console.log("connected");
-const one = {
+const submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", function (e) {
+  alert("You received a " + scoreboard.innerHTML + "/7.");
+});
+
+const quizContent = [
+  {number: 1,
+    question: "What is 1 + 1?",
+    answersArray: [
+          {position: "A", content: "2", correct: true},
+          {position: "B", content: "4", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 2,
+      question: "What is 2 + 2?",
+      answersArray: [
+          {position: "A", content: "4", correct: true},
+          {position: "B", content: "8", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 3,
+      question: "What is 4 + 4?",
+      answersArray: [
+          {position: "A", content: "8", correct: true},
+          {position: "B", content: "16", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 4,
+      question: "What is 8 + 8?",
+      answersArray: [
+          {position: "A", content: "16", correct: true},
+          {position: "B", content: "32", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 5,
+      question: "What is 16 + 16?",
+      answersArray: [
+          {position: "A", content: "32", correct: true},
+          {position: "B", content: "64", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 6,
+      question: "What is 32 + 32?",
+      answersArray: [
+          {position: "A", content: "64", correct: true},
+          {position: "B", content: "128", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },{
+      number: 7,
+      question: "What is 64 + 64?",
+      answersArray: [
+          {position: "A", content: "128", correct: true},
+          {position: "B", content: "256", correct: false},
+          {position: "C", content: "All of above", correct: false},
+          {position: "D", content: "None of above", correct: false},
+      ]
+  },
+];
+
+console.log(quizContent[0].answersArray);
+
+quizContent.forEach(function(a) {
+  const question = document.createElement("span");
+  document.body.append(question);
+  question.innerHTML = a["question"];
+  const answers = a.answersArray;
+  const answerChoice = document.createElement("input");
+  answerChoice.type = "radio";
+  const questions = document.querySelectorAll("span")
+  questions.forEach(function(b) {
+    const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    answerChoice.innerHTML = "test";
+    b.append(answerChoice);}
+
+  //const answers = quizContent[a].answersArray;
+  //console.log(answers);
+)});
+/* const questions = document.querySelectorAll("span");
+  questions.forEach(function(b) {
+    for (i = 0; i <= 3; i++) { 
+    const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    answerChoice.innerHTML = "test";
+    b.append(answerChoice);
+    if (i == 0) {
+      answerChoice.
+    }
+  } */
+/*     const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    answerChoice.innerHTML = "test";
+    b.append(answerChoice);
+    b.append(answerChoice);
+    b.append(answerChoice);
+    b.append(answerChoice); 
+  });*/
+ 
+
+
+
+
+  /* const questions = document.querySelectorAll("span");
+questions.forEach(function(a) {
+  const answer = document.createElement("input");
+  answer.type = "radio";
+  a.append(answer);
+  answer.innerHTML = "test";
+});
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const one = {
   question: "What is 1 + 1?",
   contentA: "2",
   contentB: "4",
@@ -135,10 +316,6 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
       score + 0;
     }
   });
-});
+}); */
 
-const submitButton = document.getElementById("submit");
 
-submitButton.addEventListener("click", function (e) {
-  alert("You received a " + scoreboard.innerHTML + "/7.");
-});
