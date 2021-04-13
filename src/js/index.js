@@ -1,5 +1,4 @@
 let score = 0;
-score.max = "7";
 const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
 scoreboard.prepend(score);
