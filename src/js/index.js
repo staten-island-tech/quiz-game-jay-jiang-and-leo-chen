@@ -1,4 +1,5 @@
 let score = 0;
+score.max = "7";
 const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
 scoreboard.prepend(score);
@@ -140,5 +141,8 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
 const submitButton = document.getElementById("submit");
 
 submitButton.addEventListener("click", function (e) {
+/*   if (score >= 8) {
+    alert("Stop cheating");
+  } else { */
   alert("You received a " + scoreboard.innerHTML + "/7.");
 });
