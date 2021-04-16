@@ -1,3 +1,5 @@
+let questionCounter = 1;
+
 let score = 0;
 const scoreboard = document.createElement("span");
 document.body.prepend(scoreboard);
@@ -16,64 +18,64 @@ const quizContent = [
   {number: 1,
     question: "What is 1 + 1?",
     answersArray: [
-          {position: "A", content: "2", correct: true},
-          {position: "B", content: "4", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "2", correct: true},
+          {option: "B", content: "4", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 2,
       question: "What is 2 + 2?",
       answersArray: [
-          {position: "A", content: "4", correct: true},
-          {position: "B", content: "8", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "4", correct: true},
+          {option: "B", content: "8", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 3,
       question: "What is 4 + 4?",
       answersArray: [
-          {position: "A", content: "8", correct: true},
-          {position: "B", content: "16", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "8", correct: true},
+          {option: "B", content: "16", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 4,
       question: "What is 8 + 8?",
       answersArray: [
-          {position: "A", content: "16", correct: true},
-          {position: "B", content: "32", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "16", correct: true},
+          {option: "B", content: "32", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 5,
       question: "What is 16 + 16?",
       answersArray: [
-          {position: "A", content: "32", correct: true},
-          {position: "B", content: "64", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "32", correct: true},
+          {option: "B", content: "64", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 6,
       question: "What is 32 + 32?",
       answersArray: [
-          {position: "A", content: "64", correct: true},
-          {position: "B", content: "128", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "64", correct: true},
+          {option: "B", content: "128", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },{
       number: 7,
       question: "What is 64 + 64?",
       answersArray: [
-          {position: "A", content: "128", correct: true},
-          {position: "B", content: "256", correct: false},
-          {position: "C", content: "All of above", correct: false},
-          {position: "D", content: "None of above", correct: false},
+          {option: "A", content: "128", correct: true},
+          {option: "B", content: "256", correct: false},
+          {option: "C", content: "All of above", correct: false},
+          {option: "D", content: "None of above", correct: false},
       ]
   },
 ];
@@ -84,19 +86,22 @@ quizContent.forEach(function(a) {
   const question = document.createElement("span");
   document.body.append(question);
   question.innerHTML = a["question"];
+  question.id = "question " + questionCounter;
   const answers = a.answersArray;
-  const answerChoice = document.createElement("input");
-  answerChoice.type = "radio";
-  const questions = document.querySelectorAll("span")
-  questions.forEach(function(b) {
+  const questions = document.getElementById("question " + questionCounter);
+  answers.forEach(function(b) {
     const answerChoice = document.createElement("input");
     answerChoice.type = "radio";
-    answerChoice.innerHTML = "test";
-    b.append(answerChoice);}
-
+    questions.append(answerChoice);
+    answerChoice.innerText = b.content;
+    answerChoice.name = "answer-to-question" + questionCounter;
+    console.log(answerChoice.correct);
+  })
+  console.log(a.answersArray);
+  questionCounter++;
   //const answers = quizContent[a].answersArray;
   //console.log(answers);
-)});
+});
 /* const questions = document.querySelectorAll("span");
   questions.forEach(function(b) {
     for (i = 0; i <= 3; i++) { 
