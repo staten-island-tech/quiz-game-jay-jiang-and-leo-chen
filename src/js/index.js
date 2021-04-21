@@ -1,86 +1,14 @@
+import {quizContent} from './questions.js';
+
 let questionCounter = 1;
 
+
+
 let score = 0;
-const scoreboard = document.createElement("span");
-document.body.prepend(scoreboard);
-scoreboard.prepend(score);
-scoreboard.innerHTML = "Score : " + score;
-scoreboard.hidden = true;
 
-console.log("connected");
-const submitButton = document.getElementById("submit");
 
-submitButton.addEventListener("click", function (e) {
-  alert("You received a " + scoreboard.innerHTML + "/7.");
-});
 
-const quizContent = [
-  {number: 1,
-    question: "What is 1 + 1?",
-    answersArray: [
-          {option: "A", content: "2", correct: true},
-          {option: "B", content: "4", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 2,
-      question: "What is 2 + 2?",
-      answersArray: [
-          {option: "A", content: "4", correct: true},
-          {option: "B", content: "8", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 3,
-      question: "What is 4 + 4?",
-      answersArray: [
-          {option: "A", content: "8", correct: true},
-          {option: "B", content: "16", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 4,
-      question: "What is 8 + 8?",
-      answersArray: [
-          {option: "A", content: "16", correct: true},
-          {option: "B", content: "32", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 5,
-      question: "What is 16 + 16?",
-      answersArray: [
-          {option: "A", content: "32", correct: true},
-          {option: "B", content: "64", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 6,
-      question: "What is 32 + 32?",
-      answersArray: [
-          {option: "A", content: "64", correct: true},
-          {option: "B", content: "128", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },{
-      number: 7,
-      question: "What is 64 + 64?",
-      answersArray: [
-          {option: "A", content: "128", correct: true},
-          {option: "B", content: "256", correct: false},
-          {option: "C", content: "All of above", correct: false},
-          {option: "D", content: "None of above", correct: false},
-      ]
-  },
-];
-
-console.log(quizContent[0].answersArray);
+console.log(quizContent[6].correct);
 
 quizContent.forEach(function(a) {
   const question = document.createElement("span");
@@ -93,21 +21,48 @@ quizContent.forEach(function(a) {
     const answerChoice = document.createElement("input");
     answerChoice.type = "radio";
     questions.append(answerChoice);
-    answerChoice.innerText = b.content;
+    answerChoice.value = b.content;
+    const answerChoiceContent = document.createElement("label");
+    question.append(answerChoiceContent);
+    answerChoiceContent.innerHTML = b.content;  
     answerChoice.name = "answer-to-question" + questionCounter;
-    console.log(answerChoice.correct);
   })
-  console.log(a.answersArray);
   questionCounter++;
+  
+});
+
+
+const submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", function (e) {
+  const selection = [...document.querySelectorAll(`input:checked`)];
+  selection.forEach(function(a) {
+      if (a.value === quizContent[0].correct || a.value === quizContent[1].correct || a.value === quizContent[2].correct || a.value === quizContent[3].correct || a.value === quizContent[4].correct || a.value === quizContent[5].correct || a.value === quizContent[6].correct) {
+        score++
+        console.log(quizContent[0].correct);
+      } else {
+        score + 0;
+      }
+    }
+  )
+  alert("You received a " + score + "/7.");
+  location.reload();
+});
+
+
+
+
+
+
   //const answers = quizContent[a].answersArray;
   //console.log(answers);
-});
+
+
 /* const questions = document.querySelectorAll("span");
   questions.forEach(function(b) {
     for (i = 0; i <= 3; i++) { 
     const answerChoice = document.createElement("input");
     answerChoice.type = "radio";
-    answerChoice.innerHTML = "test";
+    answerChoica.value = "test";
     b.append(answerChoice);
     if (i == 0) {
       answerChoice.
@@ -115,7 +70,7 @@ quizContent.forEach(function(a) {
   } */
 /*     const answerChoice = document.createElement("input");
     answerChoice.type = "radio";
-    answerChoice.innerHTML = "test";
+    answerChoica.value = "test";
     b.append(answerChoice);
     b.append(answerChoice);
     b.append(answerChoice);
@@ -263,7 +218,7 @@ function answerize(number, a) {
   const answer = document.createElement("span");
   bubble.type = "radio";
   bubble.name = number;
-  bubble.id = "answer";
+  bubbla.id = "answer";
   bubble.className = "correct";
   answer.innerHTML = a;
   const e = document.getElementById(number);
@@ -275,7 +230,7 @@ function incorrectize(number, a) {
   const answer = document.createElement("span");
   bubble.type = "radio";
   bubble.name = number;
-  bubble.id = "answer";
+  bubbla.id = "answer";
   answer.innerHTML = a;
   const e = document.getElementById(number);
   e.append(bubble);
