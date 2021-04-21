@@ -1,7 +1,6 @@
 {
   "name": "quiz-game-jay-jiang-and-leo-chen",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/index.html",
   "dependencies": {
     "parcel": "^2.0.0-beta.2"
@@ -23,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen/issues"
   },
-  "homepage": "https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen#readme"
+  "homepage": "https://github.com/staten-island-tech/quiz-game-jay-jiang-and-leo-chen#readme",
+  "description": ""
 }

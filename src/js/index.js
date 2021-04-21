@@ -1,12 +1,153 @@
-let score = 0;
-const scoreboard = document.createElement("span");
-document.body.prepend(scoreboard);
-scoreboard.prepend(score);
-scoreboard.innerHTML = "Score : " + score;
-scoreboard.hidden = true;
+import {quizContent} from './questions.js';
 
-console.log("connected");
-const one = {
+let questionCounter = 1;
+
+
+
+let score = 0;
+
+
+
+console.log(quizContent[6].correct);
+
+quizContent.forEach(function(a) {
+  const question = document.createElement("span");
+  document.body.append(question);
+  question.innerHTML = a["question"];
+  question.id = "question " + questionCounter;
+  const answers = a.answersArray;
+  const questions = document.getElementById("question " + questionCounter);
+  answers.forEach(function(b) {
+    const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    questions.append(answerChoice);
+    answerChoice.value = b.content;
+    const answerChoiceContent = document.createElement("label");
+    question.append(answerChoiceContent);
+    answerChoiceContent.innerHTML = b.content;  
+    answerChoice.name = "answer-to-question" + questionCounter;
+  })
+  questionCounter++;
+  
+});
+
+
+const submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", function (e) {
+  const selection = [...document.querySelectorAll(`input:checked`)];
+  selection.forEach(function(a) {
+      if (a.value === quizContent[0].correct || a.value === quizContent[1].correct || a.value === quizContent[2].correct || a.value === quizContent[3].correct || a.value === quizContent[4].correct || a.value === quizContent[5].correct || a.value === quizContent[6].correct) {
+        score++
+        console.log(quizContent[0].correct);
+      } else {
+        score + 0;
+      }
+    }
+  )
+  alert("You received a " + score + "/7.");
+  location.reload();
+});
+
+
+
+
+
+
+  //const answers = quizContent[a].answersArray;
+  //console.log(answers);
+
+
+/* const questions = document.querySelectorAll("span");
+  questions.forEach(function(b) {
+    for (i = 0; i <= 3; i++) { 
+    const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    answerChoica.value = "test";
+    b.append(answerChoice);
+    if (i == 0) {
+      answerChoice.
+    }
+  } */
+/*     const answerChoice = document.createElement("input");
+    answerChoice.type = "radio";
+    answerChoica.value = "test";
+    b.append(answerChoice);
+    b.append(answerChoice);
+    b.append(answerChoice);
+    b.append(answerChoice); 
+  });*/
+ 
+
+
+
+
+  /* const questions = document.querySelectorAll("span");
+questions.forEach(function(a) {
+  const answer = document.createElement("input");
+  answer.type = "radio";
+  a.append(answer);
+  answer.innerHTML = "test";
+});
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const one = {
   question: "What is 1 + 1?",
   contentA: "2",
   contentB: "4",
@@ -77,7 +218,7 @@ function answerize(number, a) {
   const answer = document.createElement("span");
   bubble.type = "radio";
   bubble.name = number;
-  bubble.id = "answer";
+  bubbla.id = "answer";
   bubble.className = "correct";
   answer.innerHTML = a;
   const e = document.getElementById(number);
@@ -89,7 +230,7 @@ function incorrectize(number, a) {
   const answer = document.createElement("span");
   bubble.type = "radio";
   bubble.name = number;
-  bubble.id = "answer";
+  bubbla.id = "answer";
   answer.innerHTML = a;
   const e = document.getElementById(number);
   e.append(bubble);
@@ -135,13 +276,6 @@ document.querySelectorAll("input").forEach(function scoreCount(correctAnswer) {
       score + 0;
     }
   });
-});
+}); */
 
-const submitButton = document.getElementById("submit");
 
-submitButton.addEventListener("click", function (e) {
-/*   if (score >= 8) {
-    alert("Stop cheating");
-  } else { */
-  alert("You received a " + scoreboard.innerHTML + "/7.");
-});
